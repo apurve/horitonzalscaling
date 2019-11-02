@@ -19,7 +19,7 @@ public class SearchController {
         Catalogue catalogue = new Catalogue();
         catalogue.setProduct("PS4");
 
-        Rating rating = restTemplate.getForObject("http://localhost:8081/rating/"+catalogue.getProduct(), Rating.class);
+        Rating rating = restTemplate.getForObject("http://RATING-SERVICE/rating/"+catalogue.getProduct(), Rating.class);
 
         catalogue.setRating(rating.getRating());
         return new SearchResults(catalogue);
