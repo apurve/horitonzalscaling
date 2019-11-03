@@ -1,18 +1,16 @@
 package org.laudhoot.search.model;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 public class SearchResults {
 
     private Catalogue catalogue;
 
-    public SearchResults() {
-    }
+    private String errorMessage;
 
     public SearchResults(Catalogue catalogue) {
         this.catalogue = catalogue;
     }
+
+    public SearchResults() { }
 
     public Catalogue getCatalogue() {
         return catalogue;
@@ -20,6 +18,14 @@ public class SearchResults {
 
     public void setCatalogue(Catalogue catalogue) {
         this.catalogue = catalogue;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
 }
