@@ -12,11 +12,14 @@ public class RatingServiceImpl implements RatingsService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private RatingsServiceProxy ratingsServiceProxy;
+
     @Override
     @HystrixCommand(fallbackMethod = "getRatingFallback")
     public Rating getRating(String product) {
-        Rating rating = restTemplate.getForObject("http://RATING-SERVICE/rating/"+product, Rating.class);
-        return rating;
+        //return restTemplate.getForObject("http://RATING-SERVICE/ratings/"+product, Rating.class);
+        return ratingsServiceProxy.getRatings(product);
     }
 
     public Rating getRatingFallback(String product) {

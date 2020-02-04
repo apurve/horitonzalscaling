@@ -4,6 +4,8 @@ public class Rating {
 
     private int rating;
 
+    private String port;
+
     public Rating() {
     }
 
@@ -19,4 +21,11 @@ public class Rating {
         this.rating = rating;
     }
 
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
 }
