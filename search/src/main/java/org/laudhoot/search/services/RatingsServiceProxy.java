@@ -6,11 +6,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name="RATING-SERVICE")
-@RibbonClient(name="RATING-SERVICE")
+@FeignClient(name="application-gateway")
+@RibbonClient(name="rating-service")
 public interface RatingsServiceProxy {
 
-    @RequestMapping("/ratings/{product}")
+    @RequestMapping("/rating-service/ratings/{product}")
     public Rating getRatings(@PathVariable("product") String product);
 
 }
