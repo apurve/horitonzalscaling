@@ -1,6 +1,5 @@
 package org.laudhoot.search.controller;
 
-import com.netflix.discovery.converters.Auto;
 import org.laudhoot.search.model.Catalogue;
 import org.laudhoot.search.model.Rating;
 import org.laudhoot.search.model.SearchResults;
