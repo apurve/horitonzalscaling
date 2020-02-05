@@ -1,6 +1,7 @@
 package org.laudhoot.search.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +14,10 @@ public class Product {
     @Id
     @JsonIgnore
     private Long id;
+
+    @ApiModelProperty(name = "description", required = true, value = "String", notes = "A brief description of the product.")
     private String description;
+    @ApiModelProperty(name = "price", required = true, value = "float", notes = "Selling price of the product.")
     private BigDecimal price;
 
     public Product() {

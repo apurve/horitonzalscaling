@@ -1,27 +1,35 @@
 package org.laudhoot.search.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Catalogue {
 
-    private Product product;
+    @ApiModelProperty(notes = "The list of products matching the search text.", name = "products", value = "list")
+    private List<Product> products;
 
+    @ApiModelProperty(notes = "Rating of the product retrieved from ratings service.", name = "rating", value = "reference")
     private Rating rating;
 
     public Catalogue() {
     }
 
     public Catalogue(Product product, Rating rating) {
-        this.product = product;
+        this.products = new ArrayList();
+        products.add(product);
         this.rating = rating;
     }
 
-    public Product getProduct() {
-        return product;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProduct(List<Product> products) {
+        this.products = products;
     }
 
     public Rating getRating() {
@@ -37,19 +45,19 @@ public class Catalogue {
         if (this == o) return true;
         if (!(o instanceof Catalogue)) return false;
         Catalogue catalogue = (Catalogue) o;
-        return getRating() == catalogue.getRating() &&
-                getProduct().equals(catalogue.getProduct());
+        return getProducts().equals(catalogue.getProducts()) &&
+                getRating().equals(catalogue.getRating());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getProduct(), getRating());
+        return Objects.hash(getProducts(), getRating());
     }
 
     @Override
     public String toString() {
         return "Catalogue{" +
-                "product=" + product +
+                "products=" + products +
                 ", rating=" + rating +
                 '}';
     }
