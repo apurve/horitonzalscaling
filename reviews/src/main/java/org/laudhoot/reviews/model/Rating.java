@@ -28,4 +28,12 @@ public class Rating {
     public void setPort(String port) {
         this.port = port;
     }
+
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "rating=" + rating +
+                ", port='" + port + '\'' +
+                '}';
+    }
 }

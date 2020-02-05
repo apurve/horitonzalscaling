@@ -28,4 +28,11 @@ public class SearchResults {
         this.errorMessage = errorMessage;
     }
 
+    @Override
+    public String toString() {
+        return "SearchResults{" +
+                "catalogue=" + catalogue +
+                ", errorMessage='" + errorMessage + '\'' +
+                '}';
+    }
 }
